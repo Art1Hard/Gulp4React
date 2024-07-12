@@ -14,7 +14,7 @@ export const path = {
 		images: `${buildFolder}/img/`
 	},
 	src: {
-		ts: `${srcFolder}/ts/*.*`,
+		ts: `${srcFolder}/ts/*.tsx`,
 		scss: `${srcFolder}/scss/style.scss`,
 		html: `${srcFolder}/*.html`,
 		fonts: {
@@ -25,15 +25,13 @@ export const path = {
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
 		ico: `${srcFolder}/img/**/*.ico`,
 		svgicons: `${srcFolder}/img/icons/**/*.svg`,
-		interactiveicons: `${srcFolder}/img/interactive_icons/**/*.svg`
 	},
 	watch: {
-		ts: `${srcFolder}/ts/**/*.*`,
+		ts: `${srcFolder}/ts/**/*.tsx`,
 		scss: `${srcFolder}/scss/**/*.scss`,
 		html: `${srcFolder}/**/*.html`,
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,ico,webp}`,
 		sprite: `${srcFolder}/img/icons/**/*.svg`,
-		interactivesprite: `${srcFolder}/img/interactive_icons/**/*.svg`,
 	},
 	clean: buildFolder,
 	buildFolder: buildFolder,

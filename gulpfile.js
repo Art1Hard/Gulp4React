@@ -34,12 +34,15 @@ function watcher() {
 	gulp.watch(path.watch.scss, scss);
 	gulp.watch(path.watch.ts, ts);
 	gulp.watch(path.watch.sprite, sprite);
-	gulp.watch(path.watch.interactivesprite, sprite);
 }
 
-// * Построение сценариев
 const toDash = gulp.series(whitespaceToDash, clearFonts);
+
+export { toDash, deleteOtfFont }
+
+// * Построение сценариев
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle); // * Построение шрифтов
+
 const mainTasks = gulp.series(fonts, gulp.parallel(html, scss, ts, images, sprite));
 
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
@@ -48,7 +51,6 @@ const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
 
 // * Экспорт сценариев
-export { toDash, deleteOtfFont }
 export { dev, build, deployZIP, deployFTP }
 
 // * Выполнения сценария по умолчанию

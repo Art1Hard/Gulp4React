@@ -1,6 +1,36 @@
 @import "reset";
 @import "fonts";
 
+@keyframes swirl-in-fwd {
+  0% {
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.swirl-in-fwd {
+  animation: swirl-in-fwd 0.3s ease-out both;
+}
+
+@keyframes swirl-out-bck {
+  0% {
+    transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+}
+
+.swirl-out-bck {
+  animation: swirl-out-bck 0.3s ease-in both;
+}
+
 body {
 	font-family: IdealGothic;
 	background-color: black;
@@ -24,7 +54,7 @@ body {
 	height: auto;
 }
 
-.interactive {
+.colored-icon {
 	fill: rgb(229, 255, 157);
 	width: 100px;
 	height: 100px;
@@ -33,4 +63,11 @@ body {
 .text {
 	display: block;
 	font-size: 22px;
+}
+
+.custom-toast {
+	background-color: red;
+	.Toastify__toast-icon {
+		svg {fill: green !important;}
+	}
 }
